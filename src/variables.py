@@ -8,43 +8,81 @@
 
 def crear_saludo(nombre: str) -> str:
     """
-    Retorna un saludo personalizado.
-    Ejemplo: crear_saludo("Ana") -> "Hola, Ana!"
+    Genera un string de saludo personalizado.
+
+        Args:
+            nombre (str): El nombre de la persona a saludar.
+
+        Returns:
+            str: El saludo formateado con 'Hola, {nombre}!'.
     """
-    # TU CÓDIGO AQUÍ
+    return f"Hola, {nombre}!"
     pass
 
 
 def suma_enteros(a: int, b: int) -> int:
     """
-    Retorna la suma de dos enteros.
+    Convierte los argumentos a enteros, los suma y devuelve el resultado.
+
+    Args:
+        a (int | str | float): El primer valor a convertir y sumar.
+        b (int | str | float): El segundo valor a convertir y sumar.
+
+    Returns:
+        int: La suma de los valores transformados a entero.
     """
-    # TU CÓDIGO AQUÍ
+    # Forzamos la conversión interna
+    num1 = int(a)
+    num2 = int(b)
+    
+    return num1 + num2
     pass
 
 
 def es_mayor_de_edad(edad: int) -> bool:
     """
-    Retorna True si edad >= 18, False caso contrario.
+    Verifica si una persona tiene 18 años o más.
+
+    Args:
+        edad (int): La edad a evaluar.
+
+    Returns:
+        bool: True si edad >= 18, False en caso contrario.
     """
-    # TU CÓDIGO AQUÍ
+    # Retornamos directamente el resultado de la evaluación lógica
+    return edad >= 18
     pass
 
 
 def tipo_de_dato(valor) -> str:
     """
-    Retorna el nombre del tipo de dato del valor recibido.
-    Ejemplo: tipo_de_dato(42) -> "int"
-             tipo_de_dato("hola") -> "str"
+    Identifica la clase del valor ingresado y devuelve su nombre como string.
+
+    Args:
+        valor (any): Cualquier objeto de Python (int, float, str, list, etc.).
+
+    Returns:
+        str: El nombre del tipo de dato.
     """
-    # TU CÓDIGO AQUÍ
+    # type(valor) obtiene la clase, .__name__ obtiene el nombre de esa clase
+    return type(valor).__name__
     pass
 
 
 def convertir_a_float(valor: str) -> float:
     """
-    Convierte un string numérico a float.
-    Ejemplo: convertir_a_float("3.14") -> 3.14
+    Limpia comas en un string y lo convierte a un número de punto flotante.
+
+    Args:
+        valor (str): El string numérico (puede contener ',' o '.').
+
+    Returns:
+        float: El valor convertido a float.
     """
-    # TU CÓDIGO AQUÍ
+    # 1. Reemplazamos la coma por el punto
+    # Si el string no tiene comas, .replace() simplemente no hace nada.
+    valor_preparado = valor.replace(",", ".")
+    
+    # 2. Convertimos el string resultante a float
+    return float(valor_preparado)
     pass
